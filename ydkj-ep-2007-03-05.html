@@ -1,5 +1,5 @@
 <html>
-
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
   <head>
     <title>You Don't Know Jack - Episode #1 (2007/03/05) </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -14,20 +14,14 @@
 	<p><i>(Flash and JavaScript must be enabled.)</i></p>
   </div>
   <script type="text/javascript">
-	var so = new SWFObject("jackfiles/weekly/2007/03/05/Playback_jack.swf", "Weekly", "640", "385", "8", "#000000", true);
-	 so.addParam("wmode", "transparent");
-	 so.addVariable("align", "top");
-	 so.addVariable("allowScriptAccess", "sameDomain");
-	 so.addVariable("jvi_title", "Episode 1");
-	 so.addVariable("jvi_now", "20070305");
-	 so.addVariable("jvi_uid", "0");
-	 so.addVariable("jvi_playToday", "Z");
-	 so.addVariable("jvi_playedSoFar", "0");
-	 so.addVariable("jvi_averageScore", "0");
-	 so.addVariable("jvi_embedded", "0");
-	 so.addVariable("jvi_token", "422229i6417656");
-	 so.addVariable("jvi_flux_capacitor", "fc1173381057");
-	 so.write("flashcontent");
+	window.RufflePlayer = window.RufflePlayer || {};
+  	window.addEventListener("load", (event) => {
+    	const ruffle = window.RufflePlayer.newest();
+    	const player = ruffle.createPlayer();
+    	const container = document.getElementById("flashcontent");
+    	container.appendChild(player);
+    	player.load("/jackfiles/weekly/2007/03/05/Playback_jack.swf");
+  	});
   </script>
   </body>
 </html>
