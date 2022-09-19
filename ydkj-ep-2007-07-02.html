@@ -1,5 +1,5 @@
 <html>
-
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
   <head>
     <title>You Don't Know Jack - Episode #18 (2007/07/02) </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,10 +10,16 @@
   <body style="text-align: center">    		<a href="ydkj-ep-2007-06-25.html">&lt; Prev</a>
 		 [ Episode #18 (2007/07/02) ]     		<a href="ydkj-ep-2007-07-09.html">Next &gt;</a>
 		  <div id="flashcontent">
-    <p>Loading, please wait...</p>
 	<p><i>(Flash and JavaScript must be enabled.)</i></p>
   </div>
   <script type="text/javascript">
+  	 window.RufflePlayer = window.RufflePlayer || {};
+  	 window.addEventListener("load", (event) => {
+    	 const ruffle = window.RufflePlayer.newest();
+    	 const player = ruffle.createPlayer();
+    	 const container = document.getElementById("flashcontent");
+    	 container.appendChild(player);
+  	 });
 	var so = new SWFObject("jackfiles/weekly/2007/07/02/Playback_jack.swf", "Weekly", "640", "385", "8", "#000000", true);
 	 so.addParam("wmode", "transparent");
 	 so.addVariable("align", "top");
